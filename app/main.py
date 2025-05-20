@@ -29,6 +29,7 @@ class Number(Validator):
             raise ValueError(f"Quantity should not be "
                              f"less than {self.min_value} "
                              f"and greater than {self.max_value}. message.")
+        return value
 
 
 class OneOf(Validator):
@@ -38,6 +39,7 @@ class OneOf(Validator):
     def validate(self, value: str) -> None:
         if value not in self.options:
             raise ValueError(f"Expected {value} to be one of {self.options}.")
+        return value
 
 
 class BurgerRecipe:
